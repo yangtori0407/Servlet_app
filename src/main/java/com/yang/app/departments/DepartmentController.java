@@ -1,6 +1,8 @@
 package com.yang.app.departments;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import javax.servlet.ServletException;
@@ -45,18 +47,48 @@ public class DepartmentController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String method = request.getMethod();
-		StringBuffer url = request.getRequestURL();
-		String uri = request.getRequestURI();
-//		System.out.println(url.toString());
-//		System.out.println(uri);
-//		System.out.println(method);
-		DepartmentDAO departmentDAO = new DepartmentDAO();
-		
-		uri = this.useSubString(uri);
-		if(uri.equals("list.do")) departmentDAO.getList();
-		else if(uri.equals("detail.do")) departmentDAO.getDetail();
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			// TODO Auto-generated method stub
+			String method = request.getMethod();
+			StringBuffer url = request.getRequestURL();
+			String uri = request.getRequestURI();
+	//		System.out.println(url.toString());
+	//		System.out.println(uri);
+	//		System.out.println(method);
+			DepartmentDAO departmentDAO = new DepartmentDAO();
+			
+			uri = this.useSubString(uri);
+			if(uri.equals("list.do")) {
+				List<DepartmentDTO> dtos = departmentDAO.getList();
+				
+				PrintWriter p = response.getWriter();
+				p.println("<h1>Department List</h1>");
+//				p.println("<h3>");
+//				p.println(dtos.get(0).getDepartment_id());
+//				p.println("</h3>");
+//				p.println("<h3>" + dtos.get(0).getDepartment_name()+ "</h3>");
+				
+				p.println("<table border = 1px>");
+				p.println("<thead>");
+				p.println("<tr><th>Department ID</th><th>Department Name</th><tr>");
+				p.println("<tbody>");
+				for(DepartmentDTO dto : dtos) {
+					p.println("<tr>");
+					p.println("<td>" + dto.getDepartment_id()+ "</td>");
+					p.println("<td>" + dto.getDepartment_name()+ "</td>");
+					p.println("</tr>");
+				}
+				p.println("</tbody>");
+				p.println("</table>");
+				
+				p.close();
+			}
+			else if(uri.equals("detail.do")) departmentDAO.getDetail();
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 
