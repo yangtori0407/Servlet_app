@@ -10,6 +10,23 @@ import com.yang.app.utils.DBConnection;
 
 public class LocationDAO {
 	
+	public int add(LocationDTO locationDTO) throws Exception{
+		int result = 0;
+		Connection con = DBConnection.getConnection();
+		String sql = "INSERT INTO LOCATIONS(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)"
+				+ " VALUES(LOCATIONS_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, locationDTO.getStreet_address());
+		st.setString(2, locationDTO.getPostal_code());
+		st.setString(3, locationDTO.getCity());
+		st.setString(4, locationDTO.getState_province());
+		st.setString(5, locationDTO.getCountry_id());
+		
+		result = st.executeUpdate();
+		
+		return result;
+	}
+	
 	public List<LocationDTO> getList() throws Exception{
 		Connection con = DBConnection.getConnection();
 		String sql = "SELECT * FROM LOCATIONS";
@@ -33,8 +50,24 @@ public class LocationDAO {
 		return dtos;
 	}
 	
-	public void getDetail() {
-		System.out.println("한 지역 정보 조회");
+	public LocationDTO getDetail(LocationDTO locationDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "SELECT * FROM LOCATIONS WHERE LOCATION_ID = ?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, locationDTO.getLocation_id());
+		ResultSet rs = st.executeQuery();
+		if(rs.next()) {
+			locationDTO.setStreet_address(rs.getString("STREET_ADDRESS"));
+			locationDTO.setPostal_code(rs.getString("POSTAL_CODE"));
+			locationDTO.setCity(rs.getString("CITY"));
+			locationDTO.setState_province(rs.getString("STATE_PROVINCE"));
+			locationDTO.setCountry_id(rs.getString("COUNTRY_ID"));
+		} else {
+			locationDTO = null;
+		}
+		DBConnection.disConnection(rs, st, con);
+		
+		return locationDTO;
 	}
 
 }
