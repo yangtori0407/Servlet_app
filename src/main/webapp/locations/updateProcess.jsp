@@ -5,11 +5,13 @@
     
 <% 
 	LocationDTO locationDTO = new LocationDTO();
+	String id = request.getParameter("location_id");
 	String city = request.getParameter("city");
 	String address = request.getParameter("street_address");
 	String code = request.getParameter("postal_code");
 	String state = request.getParameter("state_province");
 	String country = request.getParameter("country_id");
+	locationDTO.setLocation_id(id);
 	locationDTO.setCity(city);
 	locationDTO.setStreet_address(address);
 	locationDTO.setPostal_code(code);
