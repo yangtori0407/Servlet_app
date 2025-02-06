@@ -23,5 +23,8 @@
 	<h3><%= locationDTO.getPostal_code()%></h3>
 	<h3><%= locationDTO.getState_province()%></h3>
 	<h3><%= locationDTO.getStreet_address()%></h3>
+	
+	<a href="./update.jsp?location_id=<%= locationDTO.getLocation_id()%>">location 수정</a>
+	<a href="./deleteProcess.jsp?location_id=<%= locationDTO.getLocation_id()%>">location 삭제</a>
 </body>
 </html>
