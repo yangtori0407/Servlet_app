@@ -10,6 +10,40 @@ import com.yang.app.utils.DBConnection;
 
 public class LocationDAO {
 	
+	public int update(LocationDTO locationDTO) throws Exception {
+		int result = 0;
+		Connection con = DBConnection.getConnection();
+		String sql = "UPDATE LOCATIONS SET STREET_ADDRESS=?, POSTAL_CODE=?, CITY=?, STATE_PROVINCE=?, COUNTRY_ID=? "
+				+ "WHERE LOCATION_ID=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, locationDTO.getStreet_address());
+		st.setString(2, locationDTO.getPostal_code());
+		st.setString(3, locationDTO.getCity());
+		st.setString(4, locationDTO.getState_province());
+		st.setString(5, locationDTO.getCountry_id());
+		st.setLong(6, locationDTO.getLocation_id());
+		
+		result = st.executeUpdate();
+		
+		DBConnection.disConnection(st, con);
+		
+		return result;
+	}
+	
+	public int delete(LocationDTO locationDTO) throws Exception {
+		int result = 0;
+		Connection con = DBConnection.getConnection();
+		String sql = "DELETE LOCATIONS WHERE LOCATION_ID=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, locationDTO.getLocation_id());
+		
+		result = st.executeUpdate();
+		
+		DBConnection.disConnection(st, con);
+		
+		return result;
+	}
+	
 	public int add(LocationDTO locationDTO) throws Exception{
 		int result = 0;
 		Connection con = DBConnection.getConnection();

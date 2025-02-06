@@ -10,6 +10,8 @@
 	<form action="./study_paramProcess.jsp" method="get">
 		<!-- value 속성은 파라미터 값의 값이다! -->
 		<div>
+		<!--readonly 읽기전용 수정(x) 파라미터로 사용 가능 -->
+		<!--disabled 읽기전용 수정(x) 파라미터로 사용 불가능 -->
 			<input type="text" name="p1" value="p1 data">
 		</div>
 		
