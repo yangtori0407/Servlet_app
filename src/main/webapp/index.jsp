@@ -5,14 +5,74 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/reset.css">
+<style>
+	.top{
+		height: 95px;
+		background-color: red;
+		display: flex;
+		justify-content: space-between;
+	}
+	.logo{
+		height: 95px;
+		width: 10%;
+		background-color: darkolivegreen;
+	}
+	.sign{
+		height: 95px;
+		width: 10%;
+		background-color: gray;
+	}
+	.contents{
+		height: 765px;
+		background-color: aliceblue;
+	}
+	.menu{
+		height:765px;
+		width: 10%;
+		background-color: beige;
+	}
+	.footer{
+		height:95px;
+		background-color: aquamarine;
+		display: flex;
+		justify-content: space-between;
+	}
+	.etc{
+		height: 95px;
+		width: 10%;
+		background-color: chocolate;
+	}
+	.info{
+		height: 95px;
+		width: 90%;
+		background-color: black;
+	}
+
+
+</style>
 </head>
 <body>
-	<h1>Welcome Home page2</h1>
-	<h3>VS code</h3>
-	<h3>VS code2</h3>
-	<h3>VS Code3</h3>
-	
-	<a href="/departments/list.jsp">Department list</a>
-	<a href="./locations/list.jsp">Location List</a>
+	<div class="top">
+		<div class="logo">
+
+		</div>
+		<div class="sign">
+
+		</div>
+	</div>
+	<div class="contents">
+		<div class="menu">
+
+		</div>
+	</div>
+	<div class="footer">
+		<div class="etc">
+
+		</div>
+		<div class="info">
+
+		</div>
+	</div>
 </body>
 </html>
