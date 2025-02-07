@@ -11,7 +11,7 @@
 	String code = request.getParameter("postal_code");
 	String state = request.getParameter("state_province");
 	String country = request.getParameter("country_id");
-	locationDTO.setLocation_id(id);
+	locationDTO.setLocation_id(Long.parseLong(id));
 	locationDTO.setCity(city);
 	locationDTO.setStreet_address(address);
 	locationDTO.setPostal_code(code);
