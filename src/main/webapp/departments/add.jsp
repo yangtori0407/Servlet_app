@@ -5,16 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/form.css">
 </head>
 <body>
-	<h1>부서 추가 페이지</h1>
-	<form action="./addProcess.jsp" method="post">
-		<input type="text" name="department_name">
-		<input type="text" name="manager_id">
-		<input type="text" name="location_id">
-		
-		<input type="submit" value="등록">
-		<button type="submit">등록</button>		
-	</form>
+	
+	<div class=info>
+		<h1>부서 추가 페이지</h1>
+		<form action="./addProcess.jsp" method="post">
+			<fieldset>
+				<legend>부서명</legend>
+				<input type="text" name="department_name">
+			</fieldset>
+			<fieldset>
+				<legend>매니저 id</legend>
+				<input type="text" name="manager_id">
+			</fieldset>
+			<fieldset>
+				<legend>로케이션 id</legend>
+				<input type="text" name="location_id">
+			</fieldset>
+			
+			<input type="submit" value="등록" id="submit">
+			<!-- <button type="submit">등록</button> -->		
+		</form>
+	</div>
 </body>
 </html>
