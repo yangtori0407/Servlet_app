@@ -53,6 +53,8 @@ public class DepartmentController extends HttpServlet {
 		uri = uri.substring(uri.lastIndexOf("/") + 1);
 		String path="";
 		ActionForward actionForward = new ActionForward();
+		actionForward.setFlag(true);
+		actionForward.setPath("/WEB-INF/views/errors/notFound.jsp");
 		try {
 
 			if (uri.equals("list.do")) {
@@ -62,6 +64,24 @@ public class DepartmentController extends HttpServlet {
 			} else if (uri.equals("detail.do")) {
 				
 				departmentService.getDetail(request, actionForward);
+				
+			} else if(uri.equals("add.do")) {
+				String method = request.getMethod();
+				if(method.toUpperCase().equals("POST")) {
+					departmentService.add(request, actionForward);
+				}else {
+					actionForward.setFlag(true);
+					actionForward.setPath("/WEB-INF/views/departments/add.jsp");
+				}
+			} else if(uri.equals("update.do")) {
+				String method = request.getMethod();
+				if(method.toUpperCase().equals("POST")) {
+					departmentService.updateProcess(request, actionForward);
+				}else {
+					departmentService.update(request, actionForward);
+				}
+			} else if(uri.equals("delete.do")) {
+				departmentService.delete(request, actionForward);
 			}
 
 		} catch (Exception e) {
@@ -99,23 +119,5 @@ public class DepartmentController extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private String useSubString(String data) {
-		String result = data.substring(data.lastIndexOf("/") + 1);
-		System.out.println(result);
-		return result;
-	}
-
-	private void useSplit(String data) {
-		String[] datas = data.split("/");
-		System.out.println(datas[datas.length - 1]);
-	}
-
-	private void useToken(String data) {
-		StringTokenizer st = new StringTokenizer(data, "/");
-		String result = "";
-		while (st.hasMoreTokens()) {
-			result = st.nextToken();
-		}
-		System.out.println(result);
-	}
+	
 }
