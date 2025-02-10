@@ -5,21 +5,21 @@
     pageEncoding="UTF-8"%>
 <% 
 	//스크립틀릿
-	DepartmentDAO departmentDAO = new DepartmentDAO();
-	List<DepartmentDTO> ar = departmentDAO.getList();
+	Object ar = request.getAttribute("list");
+	List<DepartmentDTO> list = (List<DepartmentDTO>)ar;
 %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<%@ include file="/template/common.jsp" %>
+	<%@ include file="../template/common.jsp" %>
 	<link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
-	<%@ include file="/template/header.jsp" %>
+	<%@ include file="../template/header.jsp" %>
 	<section class="wrap_left contents">
-		<%@ include file="/template/nav.jsp"%>
+		<%@ include file="../template/nav.jsp"%>
 
 		<div class="right contents_right">
 			<div class="contents_right_list">
@@ -28,13 +28,13 @@
 						<th>Department Id</th><th>Department Name</th>
 					</thead>
 					<tbody>
-						<% for(int i = 0;i < ar.size();i ++) { %>
+						<% for(int i = 0;i < list.size();i ++) { %>
 						<tr>
 							<td>
-								<%= ar.get(i).getDepartment_id() %>
+								<%= list.get(i).getDepartment_id() %>
 							</td>
 							<td>
-								<a href="./detail.jsp?department_id=<%= ar.get(i).getDepartment_id()%>"><%= ar.get(i).getDepartment_name() %></a>
+								<a href="./detail.do?department_id=<%= list.get(i).getDepartment_id()%>"><%= list.get(i).getDepartment_name() %></a>
 							</td>
 						</tr>	
 						<% } %>
@@ -47,6 +47,6 @@
 
 		</div>
 	</section>
-	<%@ include file="/template/footer.jsp" %>
+	<%@ include file="../template/footer.jsp" %>
 </body>
 </html>

@@ -4,11 +4,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-	DepartmentDTO departmentDTO = new DepartmentDTO();
-	String department_id = request.getParameter("department_id");
-	departmentDTO.setDepartment_id(Long.parseLong(department_id));
-	DepartmentDAO departmentDAO = new DepartmentDAO();
-	departmentDTO = departmentDAO.getDetail(departmentDTO);
+	DepartmentDTO departmentDTO = (DepartmentDTO)request.getAttribute("dto");
 %>
 <html>
 <head>
