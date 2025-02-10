@@ -5,13 +5,7 @@
 <!DOCTYPE html>
 
 <%
-	LocationDTO locationDTO = new LocationDTO();
-	LocationDAO locationDAO = new LocationDAO();
-	
-	String id = request.getParameter("location_id");
-	locationDTO.setLocation_id(Long.parseLong(id));
-	locationDTO = locationDAO.getDetail(locationDTO);
-
+	LocationDTO locationDTO = (LocationDTO)request.getAttribute("dto");
 %>
 <html>
 <head>
@@ -20,7 +14,7 @@
 </head>
 <body>
 	<h1>location update 페이지</h1>
-	<form action="./updateProcess.jsp" method="post">
+	<form action="./update.do" method="post">
 		<input type="hidden" name="location_id" value=<%= locationDTO.getLocation_id()%>>
 		<input type="text" name="street_address" value=<%= locationDTO.getStreet_address() %>>
 		<input type="text" name="postal_code" value=<%= locationDTO.getPostal_code() %>>

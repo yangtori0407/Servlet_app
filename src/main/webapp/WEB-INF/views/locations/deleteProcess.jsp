@@ -24,6 +24,6 @@
 		<h3>로케이션 삭제 실패</h3>
 	<% } %>
 	<a href="/">Home</a>
-	<a href="./list.jsp">로케이션 목록</a>
+	<a href="./list.do">로케이션 목록</a>
 </body>
 </html>

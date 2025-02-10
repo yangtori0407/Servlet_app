@@ -4,11 +4,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-	LocationDTO locationDTO = new LocationDTO();
-	String location_id = request.getParameter("location_id");
-	locationDTO.setLocation_id(Long.parseLong(location_id));
-	LocationDAO locationDAO = new LocationDAO();
-	locationDTO = locationDAO.getDetail(locationDTO);
+	LocationDTO locationDTO = (LocationDTO)request.getAttribute("dto");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,7 +20,7 @@
 	<h3><%= locationDTO.getState_province()%></h3>
 	<h3><%= locationDTO.getStreet_address()%></h3>
 	
-	<a href="./update.jsp?location_id=<%= locationDTO.getLocation_id()%>">location 수정</a>
-	<a href="./deleteProcess.jsp?location_id=<%= locationDTO.getLocation_id()%>">location 삭제</a>
+	<a href="./update.do?location_id=<%= locationDTO.getLocation_id()%>">location 수정</a>
+	<a href="./delete.do?location_id=<%= locationDTO.getLocation_id()%>">location 삭제</a>
 </body>
 </html>
