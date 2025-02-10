@@ -11,7 +11,7 @@
 	
 	<div class=info>
 		<h1>부서 추가 페이지</h1>
-		<form action="./addProcess.jsp" method="post">
+		<form action="./add.do" method="post">
 			<fieldset>
 				<legend>부서명</legend>
 				<input type="text" name="department_name">
