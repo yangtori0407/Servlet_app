@@ -63,7 +63,7 @@ public class LocationDAO {
 	
 	public List<LocationDTO> getList() throws Exception{
 		Connection con = DBConnection.getConnection();
-		String sql = "SELECT * FROM LOCATIONS";
+		String sql = "SELECT * FROM LOCATIONS ORDER BY LOCATION_ID DESC";
 		PreparedStatement st = con.prepareStatement(sql);
 		ResultSet rs = st.executeQuery();
 		
