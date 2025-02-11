@@ -3,9 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%
-	LocationDTO locationDTO = (LocationDTO)request.getAttribute("dto");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +13,13 @@
 </head>
 <body>
 	<h3>Location Detail Page</h3>
-	<h3><%= locationDTO.getLocation_id() %></h3>
-	<h3><%= locationDTO.getCountry_id()%></h3>
-	<h3><%= locationDTO.getPostal_code()%></h3>
-	<h3><%= locationDTO.getState_province()%></h3>
-	<h3><%= locationDTO.getStreet_address()%></h3>
+	<h3>${dto.location_id }</h3>
+	<h3>${dto.country_id }</h3>
+	<h3>${dto.postal_code }</h3>
+	<h3>${dto.state_province }</h3>
+	<h3>${dto.street_address }</h3>
 	
-	<a href="./update.do?location_id=<%= locationDTO.getLocation_id()%>">location 수정</a>
-	<a href="./delete.do?location_id=<%= locationDTO.getLocation_id()%>">location 삭제</a>
+	<a href="./update.do?location_id=${dto.location_id}">location 수정</a>
+	<a href="./delete.do?location_id=${dto.location_id}">location 삭제</a>
 </body>
 </html>
