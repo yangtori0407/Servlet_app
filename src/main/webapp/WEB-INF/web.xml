@@ -43,4 +43,14 @@
   	<servlet-name>locationController</servlet-name>
   	<url-pattern>/locations/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>employeeController</servlet-name>
+  	<servlet-class>com.yang.app.employees.EmployeeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>employeeController</servlet-name>
+  	<url-pattern>/employees/*</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
