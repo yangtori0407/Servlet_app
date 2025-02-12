@@ -1,0 +1,55 @@
+.header{
+    height: 100px;
+    background-color: white; 
+}
+.header_center{
+    height: 100px;
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    margin-top: 35px;
+}
+.logo > img{
+    width: 100px;
+}
+.sign ul{
+    display: flex;
+
+    line-height: 100px;
+}
+.sign li{
+    padding-right: 10px;
+}
+.menu{
+    min-height: 85px;
+    background-color: rgb(72, 72, 199);
+    
+}
+.menu_list{
+    width: 50%;
+    height: 100%;
+    margin: 0px auto;
+}
+.menu_list ul{
+    display: flex;
+    padding-top: 35px;
+    line-height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.menu_list li{
+    padding:0px 20px;
+}
+.main{
+    min-height: 1000px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+.main > img{
+    padding: 100px;
+    box-sizing: border-box;
+}
