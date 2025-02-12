@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.yang.app.ActionForward;
 
@@ -58,6 +59,11 @@ public class EmployeeController extends HttpServlet {
 					actionForward.setFlag(true);
 					actionForward.setPath("/WEB-INF/views/employees/login.jsp");
 				}
+			} else if(uri.equals("logout.do")) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user", null);
+				actionForward.setFlag(false);
+				actionForward.setPath("../index.do");
 			}
 			
 		}catch(Exception e) {

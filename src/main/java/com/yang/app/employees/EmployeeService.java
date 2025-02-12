@@ -1,6 +1,7 @@
 package com.yang.app.employees;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.yang.app.ActionForward;
 
@@ -41,6 +42,11 @@ public class EmployeeService {
 		
 		if(employeeDTO != null) {
 			///index
+			HttpSession session = request.getSession();
+			request.getServletContext();
+			session.setAttribute("user", employeeDTO);
+			actionForward.setFlag(false);
+			actionForward.setPath("../index.do");
 		} else {
 			request.setAttribute("result", "로그인 실패");
 			request.setAttribute("path", "./login.do");
