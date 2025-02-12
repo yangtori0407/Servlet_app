@@ -51,6 +51,47 @@ public class EmployeeDAO {
 		return employeeDTO;
 	}
 	
-
+	public EmployeeDTO detail(EmployeeDTO employeeDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, employeeDTO.getEmployee_id());
+		ResultSet rs = st.executeQuery();
+		
+		EmployeeDTO result = null; 
+		
+		if(rs.next()) {
+			result = new EmployeeDTO();
+			result.setEmployee_id(rs.getLong("EMPLOYEE_ID"));
+			result.setFirst_name(rs.getString("FIRST_NAME"));
+			result.setLast_name(rs.getString("LAST_NAME"));
+			result.setEmail(rs.getString("EMAIL"));
+			result.setPhone_number(rs.getString("PHONE_NUMBER"));
+			result.setHire_date(rs.getDate("HIRE_DATE"));
+			result.setJob_id(rs.getString("job_id"));
+			result.setCommission_pct(rs.getDouble("COMMISSION_PCT"));
+			result.setDepartment_id(rs.getLong("DEPARTMENT_ID"));
+			result.setManager_id(rs.getLong("MANAGER_ID"));
+			result.setSalary(rs.getDouble("SALARY"));
+		}
+		
+		DBConnection.disConnection(rs, st, con);
+		
+		return result;
+	}
+	
+	public int update(EmployeeDTO employeeDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "UPDATE EMPLOYEES SET FIRST_NAME=?, LAST_NAME=? WHERE EMPLOYEE_ID=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, employeeDTO.getFirst_name());
+		st.setString(2, employeeDTO.getLast_name());
+		st.setLong(3, employeeDTO.getEmployee_id());
+		int result = st.executeUpdate();
+		
+		DBConnection.disConnection(st, con);
+		
+		return result;
+	}
 
 }
