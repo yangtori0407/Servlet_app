@@ -102,3 +102,22 @@ label {
     margin-top: 20px;
 }
 
+#info_box > input[type="checkbox"]{
+    display: none;
+}
+#info_box > label{
+    color: #999999;
+}
+#info_box input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#info_box input[type="checkbox"]:checked + label{
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
