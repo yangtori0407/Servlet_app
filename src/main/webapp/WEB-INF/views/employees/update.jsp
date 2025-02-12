@@ -7,21 +7,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="/WEB-INF/views/template/common.jsp"></c:import>
-<link rel="stylesheet" href="/resources/css/form.css">
+<link rel="styleSheet" href="/resources/css/form.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/template/header.jsp"></c:import>
 	<section class="wrap_left contents">
 		<c:import url="/WEB-INF/views/template/nav.jsp"></c:import>
 		<div class="right contents_right">
+			<!-- 컨텐츠 내용 서술 -->
 			<div class=info>
-				<form action="./login.do" method="post" id=info_box>
-					<input type="text" name="employee_id" placeholder="아이디">
-					<input type="password" name="password" placeholder="비밀번호">
-					<label for="remember-check">
-                		<input type="checkbox" id="remember-check">아이디 저장하기
-            		</label>
-					<input type="submit" value="등록">
+				<form action="./update.do" method="post" id="info_box">
+					<input type="hidden" name="employee_id" value="${sessionScope.user.employee_id}">
+					<input type="text" name="first_name" value="${sessionScope.user.first_name}">
+					<input type="text" name="last_name" value="${requestScope.user.last_name }">
+					<input type="submit" value="수정">
 				</form>
 			</div>
 		</div>

@@ -7,23 +7,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="/WEB-INF/views/template/common.jsp"></c:import>
-<link rel="stylesheet" href="/resources/css/form.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/template/header.jsp"></c:import>
 	<section class="wrap_left contents">
 		<c:import url="/WEB-INF/views/template/nav.jsp"></c:import>
 		<div class="right contents_right">
-			<div class=info>
-				<form action="./login.do" method="post" id=info_box>
-					<input type="text" name="employee_id" placeholder="아이디">
-					<input type="password" name="password" placeholder="비밀번호">
-					<label for="remember-check">
-                		<input type="checkbox" id="remember-check">아이디 저장하기
-            		</label>
-					<input type="submit" value="등록">
-				</form>
+			<!-- 컨텐츠 내용 서술 -->
+			
+			<div>
+				<h3>ID : ${sessionScope.user.employee_id}</h3>
+				<h3>First Name: ${sessionScope.user.first_name}</h3> <!-- session -->
+				<h3>Last Name: ${requestScope.user.last_name}</h3> <!-- request --> 
+				<!-- 이런 식으로 속성값이 동일할 경우 생략을 안하는게 좋음! 생명주기가 제일 짧은 순서대로 찾기 시작한다. -->
 			</div>
+			<div>
+				<a href="./update.do">정보 수정</a>
+			</div>
+			
 		</div>
 	</section>
 	<c:import url="/WEB-INF/views/template/footer.jsp"></c:import>
