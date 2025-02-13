@@ -16,7 +16,7 @@
     	<div class="main_detail">
             <div class="main_title">
                 <span>상품안내</span>
-                <a href="/products/update.do">수정하기</a>
+                <a href="/products/update.do?productNum=${dto.productNum}">수정하기</a>
             </div>
             <div class="product_detail">
                 <div class="product_detail_detailBox">
