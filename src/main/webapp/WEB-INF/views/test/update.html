@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="/resources/css/reset.css">
+    <link rel="styleSheet" href="/resources/css/layout.css">
+    <style>
+    .product-form-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .product-form-wrapper {
+        background: white;
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-form-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #5A8ED9;
+        text-align: center;
+    }
+
+    .product-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .product-form .form-label {
+        display: block;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    .product-form .form-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+    .product-form .form-input:focus {
+        border-color: #0048a5;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
+
+    .product-form .form-submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #5A8ED9;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .product-form .form-submit-btn:hover {
+        background: #003a87;
+    }
+
+    .product-form .form-submit-btn:active {
+        background: #002e6b;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header_center">
+            <div class="logo">
+                <img src="/resources/images/shihan_bank_logo.svg.@ERESIZE@.preview.png">
+            </div>
+            <div class="sign">
+                <ul>
+                    <li><a href="/WEB-INF/views/users/join.jsp">로그인</a></li>
+                    <li><a href="/WEB-INF/views/users/login.jsp">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <div class="menu_list">
+            <ul>
+                <li>금융상품</li>
+                <li>조회</li>
+                <li>이체</li>
+            </ul>
+        </div>
+
+    </nav>
+    <section class="main">
+        <section class="product-form-section">
+            <div class="product-form-wrapper">
+                <h2 class="product-form-title">상품 내용 수정</h2>
+                <form action="/products/update.do" method="POST" class="product-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">상품 이름</label>
+                        <input type="text" id="name" name="productName" class="form-input" placeholder="상품 이름 입력" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rate" class="form-label">이자율</label>
+                        <input type="number" id="rate" name="productRate" class="form-input" placeholder="이자율 입력 (%)" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="details" class="form-label">상품 상세내용</label>
+                        <textarea id="details" name="productDetail" class="form-input" placeholder="상품 상세내용 입력" rows="5" value="dkfjdfkjd">erererer</textarea>
+                    </div>
+        
+                    <button type="submit" class="form-submit-btn">수정하기</button>
+                </form>
+            </div>
+        </section>
+        
+    </section>
+</body>
+</html>
