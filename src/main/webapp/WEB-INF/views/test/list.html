@@ -6,48 +6,7 @@
     <title>Document</title>
     <link rel="styleSheet" href="/resources/css/reset.css">
     <link rel="styleSheet" href="/resources/css/layout.css">
-    <style>
-        .main_list{
-            width: 50%;
-            border: 1px solid black;
-        }
-        .main_title{
-            height: 5%;
-            width: 90%;
-            margin: 35px auto;
-            border-bottom: 1px solid black;
-        }
-        .main_title span{
-            font-size: 35px;
-        }
-        .product_list{
-            height: 85%;
-            width: 90%;
-            border-bottom: 2px solid blue;
-            border-top: 2px solid blue;
-            margin: 0px auto;
-        }
-        .product_list_main{
-            height: 15%;
-            width: 100%;
-            border: 1px solid black;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .product_rate{
-            width: 15%;
-            height: 100%;
-            border:1px solid black;
-            border-radius: 50%;
-            
-        }
-        .product_name{
-
-        }
-        .product_detail{
-
-        }
-    </style>
+    <link rel="styleSheet" href="/resources/css/list.css">
 </head>
 <body>
     <header class="header">
@@ -81,14 +40,42 @@
             <div class="product_list">
                 <div class="product_list_main">
                     <div class="product_rate">
-
+                        <div class="product_rate_circle">
+                            <div>0.2</div>
+                        </div>
                     </div>
                     <div class="product_name">
-
+                        <div class="name_text">적금</div>
                     </div>
-                    <!-- <div class="product_detail">
+                    <div class="product_detail">
                         <a href="/WEB-INF/views/products/detail.jsp">자세히 보기</a>
-                    </div> -->
+                    </div>
+                </div>
+                <div class="product_list_main">
+                    <div class="product_rate">
+                        <div class="product_rate_circle">
+                            <div>0.1</div>
+                        </div>
+                    </div>
+                    <div class="product_name">
+                        <div class="name_text">만기적금</div>
+                    </div>
+                    <div class="product_detail">
+                        <a href="/WEB-INF/views/products/detail.jsp">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="product_list_main">
+                    <div class="product_rate">
+                        <div class="product_rate_circle">
+                            <div class="rate_text">0.2</div>
+                        </div>
+                    </div>
+                    <div class="product_name">
+                        <div class="name_text">예금</div>
+                    </div>
+                    <div class="product_detail">
+                        <a href="/WEB-INF/views/products/detail.jsp">자세히 보기</a>
+                    </div>
                 </div>
             </div>
         </div>
