@@ -31,4 +31,23 @@ public class ProductDAO {
 		
 		return ar;
 	}
+	
+	public ProductDTO getDetail(ProductDTO productDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "SELECT * FROM PRODUCTS WHERE PRODUCTNUM=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, productDTO.getProductNum());
+		ResultSet rs = st.executeQuery();
+		if(rs.next()) {
+			productDTO.setProductDate(rs.getDate("PRODUCTDATE"));
+			productDTO.setProductDetail(rs.getString("PRODUCTDETAIL"));
+			productDTO.setProductName(rs.getString("PRODUCTNAME"));
+			productDTO.setProductNum(rs.getLong("PRODUCTNUM"));
+			productDTO.setProductRate(rs.getDouble("PRODUCTRATE"));
+		} else {
+			productDTO = null;
+		}
+		
+		return productDTO;
+	}
 }
