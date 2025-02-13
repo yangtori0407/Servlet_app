@@ -44,6 +44,8 @@ public class ProductController extends HttpServlet {
 			
 			if(uri.equals("list.do")) {
 				productService.getList(request, actionForward);
+			} else if(uri.equals("detail.do")) {
+				productService.getDetail(request, actionForward);
 			}
 			
 		}catch(Exception e) {
