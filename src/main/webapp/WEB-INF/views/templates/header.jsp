@@ -3,8 +3,7 @@
 <header class="header">
 	<div class="header_center">
 		<div class="logo">
-			<img
-				src="/resources/images/shihan_bank_logo.svg.@ERESIZE@.preview.png">
+			<a href="/index.do"><img src="/resources/images/shihan_bank_logo.svg.@ERESIZE@.preview.png"></a>
 		</div>
 		<div class="sign">
 			<ul>
