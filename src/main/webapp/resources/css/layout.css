@@ -12,7 +12,7 @@
 .logo{
     margin-top: 35px;
 }
-.logo > img{
+.logo img{
     width: 100px;
 }
 .sign ul{
@@ -25,7 +25,7 @@
 }
 .menu{
     min-height: 85px;
-    background-color: rgb(72, 72, 199);
+    background-color: rgb(90, 142, 255);
     
 }
 .menu_list{
