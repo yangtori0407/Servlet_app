@@ -48,6 +48,22 @@ public class ProductDAO {
 			productDTO = null;
 		}
 		
+		DBConnection.disConnection(rs, st, con);
+		
 		return productDTO;
+	}
+	
+	public int update(ProductDTO productDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "UPDATE PRODUCTS SET PRODUCTNAME=?, PRODUCTRATE=?, PRODUCTDETAIL=? WHERE PRODUCTNUM=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, productDTO.getProductName());
+		st.setDouble(2, productDTO.getProductRate());
+		st.setString(3,  productDTO.getProductDetail());
+		st.setLong(4, productDTO.getProductNum());
+		int result = st.executeUpdate();
+		
+		return result;
+		
 	}
 }

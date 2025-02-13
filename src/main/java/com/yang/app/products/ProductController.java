@@ -46,6 +46,21 @@ public class ProductController extends HttpServlet {
 				productService.getList(request, actionForward);
 			} else if(uri.equals("detail.do")) {
 				productService.getDetail(request, actionForward);
+			} else if(uri.equals("update.do")) {
+				String method = request.getMethod();
+				if(method.toUpperCase().equals("POST")) {
+					productService.update(request, actionForward);
+				} else {
+					productService.updateBefore(request, actionForward);
+				}
+			} else if(uri.equals("add.do")) {
+				String method = request.getMethod();
+				if(method.toUpperCase().equals("POST")) {
+					
+				} else {
+					actionForward.setFlag(true);
+					actionForward.setPath("/WEB-INF/views/products/add.jsp");
+				}
 			}
 			
 		}catch(Exception e) {
