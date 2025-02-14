@@ -17,6 +17,7 @@
         <div class="main_list">
             <div class="main_title">
                 <span>금융 상품</span>
+                <a href="/products/add.do">상품 추가하기</a>
             </div>
             <div class="product_list">
             	<!-- 반복 시키기 -->
@@ -25,7 +26,7 @@
 	                    <div class="product_rate">
 	                        <div class="product_rate_circle">
 								<!-- rate 값 넣기 -->
-								<div>${dto.productRate}</div>
+								<div>${dto.productRate}%</div>
 	                        </div>
 	                    </div>
 	                    <div class="product_name">
