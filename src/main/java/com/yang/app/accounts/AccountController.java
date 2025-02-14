@@ -1,6 +1,8 @@
 package com.yang.app.accounts;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,16 +35,21 @@ public class AccountController extends HttpServlet {
 		uri = uri.substring(uri.lastIndexOf("/") + 1);
 		ActionForward actionForward = new ActionForward();
 		actionForward.setFlag(true);
-		actionForward.setPath("/WEB-INF/views/error/notFound.jsp");
-		
+		actionForward.setPath("/WEB-INF/views/errors/notFound.jsp");
+		System.out.println(uri);
+		System.out.println(request.getMethod());
 		try {
 			if(uri.equals("list.do")) {
-				
+				accountService.getList(request, actionForward);
+			} else if(uri.equals("join.do")) {
+				accountService.join(request, actionForward);
 			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		RequestDispatcher view = request.getRequestDispatcher(actionForward.getPath());
+		view.forward(request, response);
 	}
 
 	/**

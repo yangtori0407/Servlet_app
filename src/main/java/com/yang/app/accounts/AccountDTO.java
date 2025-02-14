@@ -1,11 +1,16 @@
 package com.yang.app.accounts;
 
+import java.sql.Date;
+
+import com.yang.app.products.ProductDTO;
+
 public class AccountDTO {
 	private String accountNum;
 	private String userName;
-	private String productNum;
-	private String accountBalance;
-	private String accountDate;
+	private long accountBalance;
+	private long productNum;
+	private Date accountDate;
+	private ProductDTO productDTO;
 	
 	public String getAccountNum() {
 		return accountNum;
@@ -19,23 +24,29 @@ public class AccountDTO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getProductNum() {
-		return productNum;
-	}
-	public void setProductNum(String productNum) {
-		this.productNum = productNum;
-	}
-	public String getAccountBalance() {
+	public long getAccountBalance() {
 		return accountBalance;
 	}
-	public void setAccountBalance(String accountBalance) {
+	public void setAccountBalance(long accountBalance) {
 		this.accountBalance = accountBalance;
 	}
-	public String getAccountDate() {
+	public long getProductNum() {
+		return productNum;
+	}
+	public void setProductNum(long productNum) {
+		this.productNum = productNum;
+	}
+	public Date getAccountDate() {
 		return accountDate;
 	}
-	public void setAccountDate(String accountDate) {
+	public void setAccountDate(Date accountDate) {
 		this.accountDate = accountDate;
+	}
+	public ProductDTO getProductDTO() {
+		return productDTO;
+	}
+	public void setProductDTO(ProductDTO productDTO) {
+		this.productDTO = productDTO;
 	}
 	
 	
