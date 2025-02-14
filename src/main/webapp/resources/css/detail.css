@@ -12,16 +12,17 @@
 }
 .main_title span{
     font-size: 35px;
+    margin-top: 20px;
 }
 .main_title a{
     display: block;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 .product_detail{
     border: 2px solid rgb(151, 183, 253);
     background-color: aliceblue;
     width: 90%;
-    height: 40%;
+    height: 30%;
     margin: 35px auto;
     display: flex;
 }
@@ -63,9 +64,9 @@
 .product_detail_rateImg{
     /* border: 2px solid green; */
     width: 60%;
-    height: 35%;
+    height: 40%;
     margin: 0px auto;
-    margin-top: 100px;
+    margin-top: 80px;
     padding: 10px;
 }
 .product_detail_rateImg > img{

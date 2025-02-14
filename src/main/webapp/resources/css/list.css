@@ -1,17 +1,27 @@
 .main_list{
     width: 50%;
+    height: 100%;
     /* border: 1px solid black; */
 }
 .main_title{
     height: 5%;
     width: 90%;
     margin: 35px auto;
+    box-sizing: border-box;
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
 }
 .main_title span{
     font-size: 35px;
+    margin-top: 20px;
+}
+.main_title a{
+    display: block;
+    margin-top: 40px;
 }
 .product_list{
+    /* border: 3px solid black; */
     height: 85%;
     width: 90%;
     border-bottom: 2px solid blue;
@@ -19,7 +29,7 @@
     margin: 0px auto;
 }
 .product_list_main{
-    height: 20%;
+    height: 15%;
     width: 100%;
     border-bottom: 1px solid rgb(187, 187, 187);
     padding: 10px;

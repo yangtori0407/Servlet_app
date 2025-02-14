@@ -1,17 +1,19 @@
 .product-form-section {
     width: 100%;
-    height: 80%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 50px;
+    position: relative;
+    top: 0px;
 }
 
 .product-form-wrapper {
     background: white;
     width: 100%;
     max-width: 500px;
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
