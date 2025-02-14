@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="/resources/css/reset.css">
+    <link rel="styleSheet" href="/resources/css/layout.css">
+    <style>
+    .account_list{
+       width: 60%;
+       margin: 0px auto;
+       /* border: 2px solid black; */
+       padding-top: 50px;
+       box-sizing: border-box;
+    }
+    .table_shadow{
+        margin: 0px auto;
+        /* border: 3px solid red; */
+        width: 60%;
+        box-shadow:0 0 10px rgba(0, 55, 236, 0.15);
+        border-radius: 10px;
+        overflow:hidden;
+    }
+    .table_shadow td, .table_shadow th{
+        padding: 10px;
+        text-align: center;
+    }
+    .table_shadow thead{
+        background-color: #60a5f3;
+        color: #fff;
+    }
+
+    /*가상 선택자!!! nth-child()*/
+    .table_shadow tbody tr:nth-child(even) {
+        background-color: #e8f4fd;
+    }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header_center">
+            <div class="logo">
+                <img src="/resources/images/shihan_bank_logo.svg.@ERESIZE@.preview.png">
+            </div>
+            <div class="sign">
+                <ul>
+                    <li><a href="/WEB-INF/views/users/join.jsp">로그인</a></li>
+                    <li><a href="/WEB-INF/views/users/login.jsp">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <div class="menu_list">
+            <ul>
+                <li>금융상품</li>
+                <li>조회</li>
+                <li>이체</li>
+            </ul>
+        </div>
+
+    </nav>
+    <section class="main">
+        <section class="account_list">
+            <table class="table_shadow">
+                <thead>
+                    <tr>
+                        <th>계좌번호</th>
+                        <th>상품명</th>
+                        <th>잔액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123-456-7890</td>
+                        <td>예금 상품 A</td>
+                        <td>1,000,000원</td>
+                    </tr>
+                    <tr>
+                        <td>234-567-8901</td>
+                        <td>적금 상품 B</td>
+                        <td>2,500,000원</td>
+                    </tr>
+                    <tr>
+                        <td>345-678-9012</td>
+                        <td>펀드 상품 C</td>
+                        <td>3,200,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</body>
+</html>

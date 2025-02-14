@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="/resources/css/reset.css">
+    <link rel="styleSheet" href="/resources/css/layout.css">
+    <link rel="styleSheet" href="/resources/css/mypage.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header_center">
+            <div class="logo">
+                <img src="/resources/images/shihan_bank_logo.svg.@ERESIZE@.preview.png">
+            </div>
+            <div class="sign">
+                <ul>
+                    <li><a href="/WEB-INF/views/users/join.jsp">로그인</a></li>
+                    <li><a href="/WEB-INF/views/users/login.jsp">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <div class="menu_list">
+            <ul>
+                <li>금융상품</li>
+                <li>조회</li>
+                <li>이체</li>
+            </ul>
+        </div>
+
+    </nav>
+    <section class="main">
+        <section class="product-form-section">
+            <div class="product-form-wrapper">
+                <h2 class="product-form-title">마이페이지</h2>
+                <div class="user-info">
+                    <div class="user-photo">
+                        <img src="/resources/images/mypageImg.jpg" alt="프로필 사진">
+                    </div>
+                    <div class="user-details">
+                        <div class="detail-item">
+                            <span class="detail-label">아이디:</span>
+                            <span class="detail-value">hong123</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">이름:</span>
+                            <span class="detail-value">홍길동</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">핸드폰 번호:</span>
+                            <span class="detail-value">010-1234-5678</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">이메일:</span>
+                            <span class="detail-value">example@example.com</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="/accounts/list.do"class="detail_accounts">계좌정보</a>
+                <a href="./update.do" class="form-submit-btn">수정하기</a>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
