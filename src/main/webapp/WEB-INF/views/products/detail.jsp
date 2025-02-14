@@ -32,8 +32,12 @@
                     <div class="product_detail_rate"><span>${dto.productRate}%</span></div>
                 </div>
             </div>
-            
-            <a href="#" class="btn">가입하기</a>
+            <c:if test="${not empty sessionScope.loginDTO }">
+            	<a href="/accounts/join.do?productNum=${dto.productNum }" class="btn">가입하기</a>
+            </c:if>
+            <c:if test="${empty sessionScope.loginDTO }">
+            	<a href="/users/login.do" class="btn">가입하기</a>
+            </c:if>
 		</div>
     </section>
 </body>
