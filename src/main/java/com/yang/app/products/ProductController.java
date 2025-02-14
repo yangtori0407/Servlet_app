@@ -56,19 +56,25 @@ public class ProductController extends HttpServlet {
 			} else if(uri.equals("add.do")) {
 				String method = request.getMethod();
 				if(method.toUpperCase().equals("POST")) {
-					
+					productService.add(request, actionForward);
 				} else {
 					actionForward.setFlag(true);
 					actionForward.setPath("/WEB-INF/views/products/add.jsp");
 				}
 			}
 			
+			if(actionForward.isFlag()) {
+				RequestDispatcher view = request.getRequestDispatcher(actionForward.getPath());
+				view.forward(request, response);
+			} else {
+				response.sendRedirect(actionForward.getPath());
+			}
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher view = request.getRequestDispatcher(actionForward.getPath());
-		view.forward(request, response);
+		
 	}
 
 	/**

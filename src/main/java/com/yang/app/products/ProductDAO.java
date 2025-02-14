@@ -66,4 +66,18 @@ public class ProductDAO {
 		return result;
 		
 	}
+	//PRODUCTNUM PRODUCTNAME PRODUCTRATE PRODUCTDATE PRODUCTDETAIL
+	public int add(ProductDTO productDTO) throws Exception{
+		Connection con = DBConnection.getConnection();
+		String sql = "INSERT INTO PRODUCTS(PRODUCTNUM, PRODUCTNAME, PRODUCTRATE, PRODUCTDATE, PRODUCTDETAIL) "
+				+ "VALUES(PRODUCT_SEQ.NEXTVAL, ?, ?, SYSDATE, ?)";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, productDTO.getProductName());
+		st.setDouble(2, productDTO.getProductRate());
+		st.setString(3, productDTO.getProductDetail());
+		
+		int result = st.executeUpdate();
+		
+		return result;
+	}
 }

@@ -55,4 +55,20 @@ public class ProductService {
 		actionForward.setFlag(true);
 		actionForward.setPath("/WEB-INF/commons/result.jsp");
 	}
+	public void add(HttpServletRequest request, ActionForward actionForward) throws Exception{
+		ProductDTO productDTO = new ProductDTO();
+		productDTO.setProductDetail(request.getParameter("productDetail"));
+		productDTO.setProductName(request.getParameter("productName"));
+		productDTO.setProductRate(Double.parseDouble(request.getParameter("productRate")));
+		int result = productDAO.add(productDTO);
+		
+		String str = "상품 추가를 실패하였습니다.";
+		if(result > 0) {
+			str = "상품 추가를 성공 하였습니다.";	
+		}
+		request.setAttribute("result", str);
+		request.setAttribute("path", "/products/list.do");
+		actionForward.setFlag(true);
+		actionForward.setPath("/WEB-INF/commons/result.jsp");
+	}
 }
