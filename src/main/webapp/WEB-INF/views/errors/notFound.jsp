@@ -12,10 +12,11 @@
     <c:import url="/WEB-INF/views/templates/header.jsp"></c:import>
     <c:import url="/WEB-INF/views/templates/nav.jsp"></c:import>
     <section class="main">
-    	<!-- 내용 넣는 부분 -->
-    	<h1>해당 페이지를 찾을 수 없습니다.</h1>
-    	<a href="/index.do">HOME</a>
-        <img src="/resources/images/shinhan.jpg">
+    <!-- 내용 넣는 부분 -->
+        <div class="main_img">
+            <div>해당 페이지를 찾을 수 없습니다.</div>
+            <img src="/resources/images/character_friends.png">
+        </div>
     </section>
 </body>
 </html>
