@@ -13,7 +13,9 @@
     <c:import url="/WEB-INF/views/templates/nav.jsp"></c:import>
     <section class="main">
     <!-- 내용 넣는 부분 -->
-        <img src="/resources/images/shinhan.jpg">
+        <div class="main_img">
+            <img src="/resources/images/character_friends.png">
+        </div>
     </section>
 </body>
 </html>
