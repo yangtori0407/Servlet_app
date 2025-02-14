@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="/WEB-INF/views/templates/common.jsp"></c:import>
+<link rel="styleSheet" href="/resources/css/accountsList.css">
 </head>
 <body>
     <c:import url="/WEB-INF/views/templates/header.jsp"></c:import>
@@ -23,21 +24,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>123-456-7890</td>
-                        <td>예금 상품 A</td>
-                        <td>1,000,000원</td>
-                    </tr>
-                    <tr>
-                        <td>234-567-8901</td>
-                        <td>적금 상품 B</td>
-                        <td>2,500,000원</td>
-                    </tr>
-                    <tr>
-                        <td>345-678-9012</td>
-                        <td>펀드 상품 C</td>
-                        <td>3,200,000원</td>
-                    </tr>
+                	<c:forEach items="${accounts}" var="dto">
+	                    <tr>
+	                        <td>${dto.accountNum }</td>
+	                        <td>${dto.productDTO.productName }</td>
+	                        <td>${dto.accountBalance}</td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </section>
